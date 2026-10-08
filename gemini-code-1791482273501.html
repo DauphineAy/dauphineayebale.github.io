@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dauphine Ayebale, MBChB, MPH | Physician & Healthtech Product Strategist</title>
+  <meta name="description" content="Portfolio of Dauphine Ayebale, MBChB, MPH. Bridging clinical medicine, advanced biostatistics, and scalable digital health systems." />
+  
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#hero" class="font-bold text-lg tracking-tight text-white flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-brand-500 animate-pulse"></span>
+        <span>DAUPHINE AYEBALE</span>
+        <span class="text-xs font-mono text-slate-400 font-normal">MBChB, MPH</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-brand-500 transition-colors">About</a>
+        <a href="#projects" class="hover:text-brand-500 transition-colors">Case Studies</a>
+        <a href="#skills" class="hover:text-brand-500 transition-colors">Skills</a>
+        <a href="#experience" class="hover:text-brand-500 transition-colors">Experience</a>
+        <a href="mailto:uweradaphne@gmail.com" class="px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-white font-medium transition-all shadow-sm">Get in Touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="pt-36 pb-20 px-6 max-w-6xl mx-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-brand-950/80 border border-brand-700/50 text-brand-400 mb-6">
+      <span>Atlanta, GA</span>
+      <span>•</span>
+      <span>Clinical Product & Health Informatics</span>
+    </div>
+    
+    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight max-w-4xl">
+      Bridging Clinical Realities, Biostatistics & Scalable Digital Health Architecture.
+    </h1>
+    
+    <p class="text-lg sm:text-xl text-slate-400 max-w-2xl font-normal leading-relaxed mb-8">
+      Dual-trained Medical Officer (U.S. M.D. Equivalent) and Emory MPH Quantitative Researcher. Architecting offline-first EHR pipelines, scaling health data systems to 10,000+ users, and reducing intake-to-diagnosis turnaround times.
+    </p>
+
+    <div class="flex flex-wrap items-center gap-4 text-sm font-medium">
+      <a href="#projects" class="px-6 py-3 rounded-lg bg-brand-600 hover:bg-brand-500 text-white transition-all shadow-md shadow-brand-900/30">
+        Explore Case Studies
+      </a>
+      <a href="mailto:uweradaphne@gmail.com" class="px-6 py-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all">
+        Contact Me
+      </a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-lg text-slate-400 hover:text-white transition-colors">
+        LinkedIn →
+      </a>
+    </div>
+
+    <!-- Quick Metrics Counter -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-12 border-t border-slate-800">
+      <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-800">
+        <div class="text-3xl font-bold font-mono text-brand-400">10,000+</div>
+        <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Active Field Users Scaled</div>
+      </div>
+      <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-800">
+        <div class="text-3xl font-bold font-mono text-brand-400">25%</div>
+        <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Clinical Turnaround Drop</div>
+      </div>
+      <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-800">
+        <div class="text-3xl font-bold font-mono text-brand-400">HL7 / FHIR</div>
+        <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Interoperable Architectures</div>
+      </div>
+      <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-800">
+        <div class="text-3xl font-bold font-mono text-brand-400">100%</div>
+        <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Surveillance Compliance</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Proposition Blockquote -->
+  <section id="about" class="py-16 bg-slate-950/60 border-y border-slate-800 px-6">
+    <div class="max-w-4xl mx-auto">
+      <blockquote class="text-xl sm:text-2xl font-light text-slate-300 italic border-l-4 border-brand-500 pl-6 leading-relaxed">
+        “Most clinical software fails because it is designed by engineers who have never touched a patient, or by clinicians who don't understand relational databases and system constraints. I bridge both worlds.”
+      </blockquote>
+      <div class="mt-6 pl-6 text-sm text-slate-400">
+        <p class="font-medium text-slate-200">Dauphine Ayebale, MBChB, MPH</p>
+        <p>Physician • Rollins School of Public Health, Emory University</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Case Studies -->
+  <section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
+    <div class="mb-12">
+      <h2 class="text-xs font-mono font-bold tracking-widest text-brand-400 uppercase mb-2">Portfolio Deliverables</h2>
+      <h3 class="text-3xl font-bold text-white tracking-tight">Featured Case Studies</h3>
+    </div>
+
+    <div class="space-y-12">
+      
+      <!-- Project 1: EndeleaCare -->
+      <article class="p-8 rounded-2xl bg-slate-800/30 border border-slate-800 hover:border-slate-700 transition-all">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+          <span class="px-3 py-1 rounded text-xs font-mono bg-brand-950 border border-brand-800 text-brand-400">
+            Case Study 01 • Healthtech Product Lead
+          </span>
+          <span class="text-xs font-mono text-slate-400">Emory MPH Capstone • 2026</span>
+        </div>
+        <h4 class="text-2xl font-bold text-white mb-2">EndeleaCare: Low-Resource Closed-Loop Referral EHR</h4>
+        <p class="text-slate-400 text-sm mb-6 max-w-3xl">
+          Architected a zero-licensing, offline-first Android referral EHR designed for rural regional catchments serving over 4 million individuals, eliminating unannounced emergency patient arrivals.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6 mb-6">
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+            <h5 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">The Problem</h5>
+            <p class="text-sm text-slate-300">100% of emergency transfers from primary health clinics arrived unannounced with lost paper records, creating severe triage bottlenecks and diagnostic lag.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+            <h5 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">The Architecture</h5>
+            <p class="text-sm text-slate-300">Offline-first local SQLite caching on Android tablets paired with asynchronous delta-syncing via cellular handshake to an open-source HL7/FHIR store.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+            <h5 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Quantified Impact</h5>
+            <p class="text-sm text-slate-300">Targeted >60% loop closure rate (baseline 0%) and >80% record completion at arrival (<span class="font-mono">n=87, α=0.05</span>).</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+          <span class="px-2.5 py-1 bg-slate-800 rounded">HL7 / FHIR</span>
+          <span class="px-2.5 py-1 bg-slate-800 rounded">Android Offline-First</span>
+          <span class="px-2.5 py-1 bg-slate-800 rounded">PRD Authoring</span>
+          <span class="px-2.5 py-1 bg-slate-800 rounded">Evaluation Framework</span>
+        </div>
+      </article>
+
+      <!-- Project 2: Living Water International -->
+      <article class="p-8 rounded-2xl bg-slate-800/30 border border-slate-800 hover:border-slate-700 transition-all">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+          <span class="px-3 py-1 rounded text-xs font-mono bg-emerald-950 border border-emerald-800 text-emerald-400">
+            Case Study 02 • Knowledge Systems & MEL
+          </span>
+          <span class="text-xs font-mono text-slate-400">Living Water International • 2025 – Present</span>
+        </div>
+        <h4 class="text-2xl font-bold text-white mb-2">Global Knowledge Architecture & Frontline Telemetry</h4>
+        <p class="text-slate-400 text-sm mb-6 max-w-3xl">
+          Consolidated enterprise information systems across 10 global country offices, cutting retrieval lag and scaling mobile field telemetry to over 10,000 active frontline workers.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6 mb-6">
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+            <h5 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">The Problem</h5>
+            <p class="text-sm text-slate-300">500+ field personnel across 10 country offices operated within fragmented reporting silos, causing delayed escalations and inefficient resource allocation.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+            <h5 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">The Solution</h5>
+            <p class="text-sm text-slate-300">Built the 'Flourish' centralized SharePoint knowledge architecture; synthesized user interviews with 8 department leads into 12-network data SOPs.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+            <h5 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Quantified Impact</h5>
+            <p class="text-sm text-slate-300">Reduced info retrieval times by ~35%, steered $50K+ in emergency allocations via morbidity models, and boosted engagement ~30% via WCAG 2.1 overhaul.</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+          <span class="px-2.5 py-1 bg-slate-800 rounded">Salesforce</span>
+          <span class="px-2.5 py-1 bg-slate-800 rounded">TaroWorks</span>
+          <span class="px-2.5 py-1 bg-slate-800 rounded">SharePoint Architecture</span>
+          <span class="px-2.5 py-1 bg-slate-800 rounded">WCAG 2.1 SEO</span>
+        </div>
+      </article>
+
+      <!-- Project 3: Clinical Re-engineering -->
+      <article class="p-8 rounded-2xl bg-slate-800/30 border border-slate-800 hover:border-slate-700 transition-all">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+          <span class="px-3 py-1 rounded text-xs font-mono bg-purple-950 border border-purple-800 text-purple-400">
+            Case Study 03 • Clinical Quality Improvement
+          </span>
+          <span class="text-xs font-mono text-slate-400">Kitante Medical Center • 2023 – 2025</span>
+        </div>
+        <h4 class="text-2xl font-bold text-white mb-2">Clinical Workflow Re-engineering & Digital Surveillance</h4>
+        <p class="text-slate-400 text-sm mb-6 max-w-3xl">
+          Standardized digital intake protocols and automated statutory disease reporting triggers across pediatric, OB/GYN, and surgical inpatient/outpatient units.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6 mb-6">
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+            <h5 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">The Problem</h5>
+            <p class="text-sm text-slate-300">Clinical bottlenecks in neonatal and HIV cohorts produced diagnostic turnaround delays and sporadic compliance with national statutory health alerts.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+            <h5 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">The Solution</h5>
+            <p class="text-sm text-slate-300">Standardized digital case intake tools across 3 wards and automated real-time alert triggers connecting the internal EMR to national reporting registries.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+            <h5 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Quantified Impact</h5>
+            <p class="text-sm text-slate-300">Reduced intake-to-diagnosis turnaround by 25% (2,500+ encounters), achieved 100% statutory alert compliance across 3,500+ records, and dropped diagnostic discrepancies 30%.</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+          <span class="px-2.5 py-1 bg-slate-800 rounded">EMR / LIS Pipelines</span>
+          <span class="px-2.5 py-1 bg-slate-800 rounded">Disease Surveillance</span>
+          <span class="px-2.5 py-1 bg-slate-800 rounded">Clinical QI</span>
+          <span class="px-2.5 py-1 bg-slate-800 rounded">Cross-Functional Leadership</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Technical & Domain Skills Matrix -->
+  <section id="skills" class="py-20 bg-slate-950/40 border-t border-slate-800 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-12">
+        <h2 class="text-xs font-mono font-bold tracking-widest text-brand-400 uppercase mb-2">Competencies</h2>
+        <h3 class="text-3xl font-bold text-white tracking-tight">Core Capabilities Matrix</h3>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="p-6 rounded-xl bg-slate-900 border border-slate-800">
+          <h4 class="text-base font-semibold text-white mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-500"></span> Product & Strategy
+          </h4>
+          <ul class="text-sm text-slate-400 space-y-2">
+            <li>• Discovery Interviews & Personas</li>
+            <li>• PRD & SOP Authoring</li>
+            <li>• Roadmap Prioritization</li>
+            <li>• A/B Testing & Evaluation Frameworks</li>
+            <li>• Accessibility (WCAG 2.1) & SEO</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-xl bg-slate-900 border border-slate-800">
+          <h4 class="text-base font-semibold text-white mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Analytics & Biostats
+          </h4>
+          <ul class="text-sm text-slate-400 space-y-2">
+            <li>• SAS (Survey Procedures & Logistic Reg)</li>
+            <li>• R, SPSS, Epi Info, MAXQDA</li>
+            <li>• Multivariable Causal Inference</li>
+            <li>• Complex NHANES Data Modeling</li>
+            <li>• Telemetry & KPI Instrumentation</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-xl bg-slate-900 border border-slate-800">
+          <h4 class="text-base font-semibold text-white mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-purple-500"></span> Informatics & Architecture
+          </h4>
+          <ul class="text-sm text-slate-400 space-y-2">
+            <li>• HL7 / FHIR Standards</li>
+            <li>• Offline-First Android Tooling</li>
+            <li>• EMR / LIS Integration</li>
+            <li>• Data Schema & Pipeline QA</li>
+            <li>• Health System Interoperability</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-xl bg-slate-900 border border-slate-800">
+          <h4 class="text-base font-semibold text-white mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amber-500"></span> Platforms & Governance
+          </h4>
+          <ul class="text-sm text-slate-400 space-y-2">
+            <li>• Salesforce & TaroWorks</li>
+            <li>• SharePoint Knowledge Architecture</li>
+            <li>• HIPAA & IRB Ethics Compliance</li>
+            <li>• Clinical Team Leadership</li>
+            <li>• Public Health Policy Strategy</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Career Timeline -->
+  <section id="experience" class="py-20 px-6 max-w-6xl mx-auto">
+    <div class="mb-12">
+      <h2 class="text-xs font-mono font-bold tracking-widest text-brand-400 uppercase mb-2">Background</h2>
+      <h3 class="text-3xl font-bold text-white tracking-tight">Education & Career Path</h3>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Experience Column -->
+      <div>
+        <h4 class="text-lg font-bold text-white mb-6 border-b border-slate-800 pb-2">Professional Positions</h4>
+        <div class="space-y-8 relative before:absolute before:inset-0 before:left-3 before:w-0.5 before:bg-slate-800">
+          
+          <div class="relative pl-8">
+            <div class="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-brand-500 border-4 border-slate-900"></div>
+            <div class="text-xs font-mono text-brand-400">July 2026 – Present</div>
+            <h5 class="text-base font-semibold text-white">Programs Impact Officer (MEL)</h5>
+            <div class="text-sm text-slate-400 mb-2">Living Water International • Stafford, TX (Remote)</div>
+            <p class="text-xs text-slate-400">Architected enterprise SharePoint knowledge hub across 10 field offices, reducing retrieval times by ~35% for 500+ personnel.</p>
+          </div>
+
+          <div class="relative pl-8">
+            <div class="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-slate-700 border-4 border-slate-900"></div>
+            <div class="text-xs font-mono text-slate-400">May 2025 – August 2025</div>
+            <h5 class="text-base font-semibold text-white">Programs Impact Intern (MEL)</h5>
+            <div class="text-sm text-slate-400 mb-2">Living Water International • Stafford, TX (Remote)</div>
+            <p class="text-xs text-slate-400">Conducted global mixed-methods discovery to scale Salesforce workflows to 10,000+ active field users.</p>
+          </div>
+
+          <div class="relative pl-8">
+            <div class="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-slate-700 border-4 border-slate-900"></div>
+            <div class="text-xs font-mono text-slate-400">June 2023 – February 2025</div>
+            <h5 class="text-base font-semibold text-white">Medical Officer (OB/GYN, Peds, Surgery)</h5>
+            <div class="text-sm text-slate-400 mb-2">Kitante Medical Center • Kampala, Uganda</div>
+            <p class="text-xs text-slate-400">Led 12-member clinical team, reduced turnaround by 25% across 2,500+ high-risk encounters, and maintained 100% compliance on surveillance alerts.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Education Column -->
+      <div>
+        <h4 class="text-lg font-bold text-white mb-6 border-b border-slate-800 pb-2">Academic Credentials</h4>
+        <div class="space-y-6">
+          
+          <div class="p-5 rounded-xl bg-slate-800/30 border border-slate-800">
+            <div class="text-xs font-mono text-brand-400 mb-1">Graduating May 2026</div>
+            <h5 class="text-base font-bold text-white">Master of Public Health (MPH)</h5>
+            <div class="text-sm text-slate-300 font-medium">Rollins School of Public Health, Emory University</div>
+            <div class="text-xs text-slate-400 mt-2">Specialization: Global Health — Quantitative Methods & Research Methodology</div>
+          </div>
+
+          <div class="p-5 rounded-xl bg-slate-800/30 border border-slate-800">
+            <div class="text-xs font-mono text-brand-400 mb-1">September 2021</div>
+            <h5 class="text-base font-bold text-white">Bachelor of Medicine & Surgery (MBChB)</h5>
+            <div class="text-sm text-slate-300 font-medium">Kampala International University</div>
+            <div class="text-xs text-slate-400 mt-2">U.S. M.D. Equivalent. Clinical Rotations: Internal Medicine, General Surgery, Pediatrics, OB/GYN</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Footer -->
+  <footer class="border-t border-slate-800 bg-slate-950 py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">Let's Build Better Health Systems Together</h3>
+      <p class="text-slate-400 text-sm max-w-xl mx-auto mb-8">
+        Available for Clinical Product Management, Digital Health Informatics, and Healthtech Strategy roles.
+      </p>
+      <div class="inline-flex flex-wrap items-center justify-center gap-4 text-sm font-medium">
+        <a href="mailto:uweradaphne@gmail.com" class="px-6 py-3 rounded-lg bg-brand-600 hover:bg-brand-500 text-white transition-all shadow-md">
+          uweradaphne@gmail.com
+        </a>
+        <a href="tel:4044232825" class="px-6 py-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all">
+          (404) 423-2825
+        </a>
+      </div>
+      <div class="mt-12 text-xs font-mono text-slate-600">
+        © 2026 Dauphine Ayebale, MBChB, MPH. Designed for healthtech product excellence.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
