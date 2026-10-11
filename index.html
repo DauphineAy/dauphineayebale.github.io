@@ -31,7 +31,7 @@
               700: '#28313e',
             },
             accent: {
-              lime: '#d2ff00',      /* High-energy neon */
+              lime: '#d2ff00',      /* Neon Accent */
               teal: '#2dd4bf',      /* Clinical & Public Health */
               cyan: '#38bdf8',      /* Informatics */
             }
@@ -41,7 +41,29 @@
     }
   </script>
 
+  <!-- Lenis (Smooth Scroll Engine) & GSAP with ScrollTrigger -->
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
   <style>
+    /* Lenis Essential CSS */
+    html.lenis, html.lenis body {
+      height: auto;
+    }
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+    .lenis.lenis-scrolling iframe {
+      pointer-events: none;
+    }
+
     /* Subtle background grid */
     .bg-grid {
       background-size: 40px 40px;
@@ -91,7 +113,7 @@
     }
   </style>
 </head>
-<body class="bg-surface-950 text-slate-200 font-sans antialiased selection:bg-accent-lime selection:text-black">
+<body class="bg-surface-950 text-slate-200 font-sans antialiased selection:bg-accent-lime selection:text-black overflow-x-hidden">
 
   <!-- Interactive Dynamic Glow -->
   <div id="cursor-glow" class="hidden md:block"></div>
@@ -124,7 +146,7 @@
     <div class="grid lg:grid-cols-12 gap-12 items-center">
       
       <!-- Value Proposition -->
-      <div class="lg:col-span-7">
+      <div class="lg:col-span-7 hero-text-block">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono bg-surface-900 border border-surface-700 text-accent-lime mb-6">
           <span class="w-2 h-2 rounded-full bg-accent-lime animate-ping"></span>
           Clinical Medicine × Quantitative Epidemiologist × Systems Builder
@@ -150,8 +172,8 @@
         </div>
       </div>
 
-      <!-- 3D Tilt Portrait Card -->
-      <div class="lg:col-span-5 flex justify-center">
+      <!-- 3D Tilt Portrait Card with Parallax Float -->
+      <div class="lg:col-span-5 flex justify-center hero-image-parallax" data-speed="0.85">
         <div class="tilt-card w-full max-w-sm rounded-3xl bg-surface-900 border border-surface-700 p-3 shadow-2xl relative">
           <div class="w-full h-[440px] rounded-2xl overflow-hidden bg-surface-950 relative">
             <img src="./portrait.jpg" alt="Dauphine Ayebale, MBChB, MPH" onerror="this.src='./clinical-or.jpg'" class="w-full h-full object-cover grayscale contrast-125 hover:contrast-100 transition-all duration-700">
@@ -167,7 +189,7 @@
     </div>
 
     <!-- Live Telemetry Bar -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-12 border-t border-surface-800">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-12 border-t border-surface-800 telemetry-row">
       <div class="p-5 rounded-2xl bg-surface-900/60 border border-surface-800">
         <div class="text-3xl font-display font-extrabold text-accent-lime">2,500+</div>
         <div class="text-[11px] font-mono text-slate-400 mt-1 uppercase tracking-wider">Clinical Encounters Led</div>
@@ -188,7 +210,7 @@
   </section>
 
   <!-- Feature Editorial Section: Interactive EndeleaCare Video Showcase -->
-  <section id="showcase" class="py-24 px-6 max-w-7xl mx-auto border-b border-surface-800">
+  <section id="showcase" class="py-24 px-6 max-w-7xl mx-auto border-b border-surface-800 scroll-reveal">
     <div class="max-w-3xl mb-12">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded text-xs font-mono bg-accent-lime/10 border border-accent-lime/30 text-accent-lime uppercase tracking-wider mb-3">
         Interactive Prototype In Action
@@ -201,8 +223,8 @@
       </p>
     </div>
 
-    <!-- Editorial Video Display Card -->
-    <div class="rounded-3xl bg-surface-900 border border-surface-700 p-3 sm:p-5 video-glow overflow-hidden">
+    <!-- Editorial Video Display Card with Parallax Glow -->
+    <div class="rounded-3xl bg-surface-900 border border-surface-700 p-3 sm:p-5 video-glow overflow-hidden transform-gpu">
       <div class="relative rounded-2xl overflow-hidden bg-black aspect-video flex items-center justify-center">
         <video class="w-full h-full object-cover" autoplay loop muted playsinline controls>
           <source src="./MVP Demo_Video.mp4" type="video/mp4">
@@ -234,15 +256,15 @@
 
   <!-- The Three Disciplines (Equally Weighted) -->
   <section id="disciplines" class="py-24 px-6 max-w-7xl mx-auto border-b border-surface-800">
-    <div class="mb-14">
+    <div class="mb-14 scroll-reveal">
       <h2 class="text-xs font-mono uppercase tracking-widest text-accent-lime mb-2">Multi-Disciplinary Spectrum</h2>
       <h3 class="font-display text-3xl sm:text-4xl font-bold text-white uppercase tracking-tight">The Three Disciplines</h3>
     </div>
 
-    <div class="grid lg:grid-cols-3 gap-8">
+    <div class="grid lg:grid-cols-3 gap-8 stagger-cards">
       
       <!-- Discipline 1: Medicine -->
-      <div class="tilt-card rounded-3xl bg-surface-900 border border-surface-800 hover:border-accent-teal/50 transition-all p-4 flex flex-col justify-between">
+      <div class="tilt-card discipline-item rounded-3xl bg-surface-900 border border-surface-800 hover:border-accent-teal/50 transition-all p-4 flex flex-col justify-between">
         <div>
           <div class="h-56 rounded-2xl overflow-hidden mb-6 relative">
             <img src="./clinical-or.jpg" alt="Clinical Ward and Surgery" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
@@ -262,7 +284,7 @@
       </div>
 
       <!-- Discipline 2: Public Health & Biostats -->
-      <div class="tilt-card rounded-3xl bg-surface-900 border border-surface-800 hover:border-accent-cyan/50 transition-all p-4 flex flex-col justify-between">
+      <div class="tilt-card discipline-item rounded-3xl bg-surface-900 border border-surface-800 hover:border-accent-cyan/50 transition-all p-4 flex flex-col justify-between">
         <div>
           <div class="h-56 rounded-2xl overflow-hidden mb-6 relative">
             <img src="./global-health.png" alt="Global Health Strategy" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
@@ -282,7 +304,7 @@
       </div>
 
       <!-- Discipline 3: Systems & Technology -->
-      <div class="tilt-card rounded-3xl bg-surface-900 border border-surface-800 hover:border-accent-lime/50 transition-all p-4 flex flex-col justify-between">
+      <div class="tilt-card discipline-item rounded-3xl bg-surface-900 border border-surface-800 hover:border-accent-lime/50 transition-all p-4 flex flex-col justify-between">
         <div>
           <div class="h-56 rounded-2xl overflow-hidden mb-6 relative">
             <img src="./pathogen.png" alt="Health Data Science" class="w-full h-full object-cover contrast-125 grayscale hover:grayscale-0 transition-all duration-500">
@@ -306,7 +328,7 @@
 
   <!-- Interactive Project Archive with Filter Tabs -->
   <section id="projects" class="py-24 px-6 max-w-7xl mx-auto border-b border-surface-800">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 scroll-reveal">
       <div>
         <h2 class="text-xs font-mono uppercase tracking-widest text-accent-lime mb-2">Interactive Index</h2>
         <h3 class="font-display text-3xl sm:text-5xl font-extrabold text-white uppercase tracking-tight">Case Studies</h3>
@@ -322,7 +344,7 @@
     </div>
 
     <!-- Editorial Cards Grid -->
-    <div class="grid md:grid-cols-2 gap-8">
+    <div class="grid md:grid-cols-2 gap-8 projects-grid">
       
       <!-- Card 1 -->
       <div class="tilt-card project-card systems p-8 rounded-3xl bg-surface-900 border border-surface-800 hover:border-accent-lime/60 transition-all flex flex-col justify-between" data-category="systems">
@@ -424,7 +446,7 @@
     <div class="grid lg:grid-cols-12 gap-12 items-center">
       
       <!-- Narrative & Credentials -->
-      <div class="lg:col-span-7">
+      <div class="lg:col-span-7 timeline-block">
         <h2 class="text-xs font-mono uppercase tracking-widest text-accent-lime mb-2">Track Record</h2>
         <h3 class="font-display text-3xl sm:text-4xl font-bold text-white uppercase tracking-tight mb-8">
           The Journey Across Medicine & Systems
@@ -432,14 +454,14 @@
 
         <div class="space-y-8 relative before:absolute before:inset-0 before:left-3 before:w-0.5 before:bg-surface-800">
           
-          <div class="relative pl-8">
+          <div class="relative pl-8 timeline-step">
             <div class="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-accent-lime border-4 border-surface-950"></div>
             <span class="text-xs font-mono text-accent-lime">July 2026 – Present</span>
             <h4 class="text-base font-bold text-white">Programs Impact Officer – MEL</h4>
             <p class="text-xs text-slate-400">Living Water International • Stafford, TX (Remote)</p>
           </div>
 
-          <div class="relative pl-8">
+          <div class="relative pl-8 timeline-step">
             <div class="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-accent-teal border-4 border-surface-950"></div>
             <span class="text-xs font-mono text-accent-teal">Conferral: May 2026</span>
             <h4 class="text-base font-bold text-white">Master of Public Health (MPH)</h4>
@@ -447,14 +469,14 @@
             <p class="text-xs text-slate-500 mt-1">Global Health — Quantitative Methods & Biostatistical Methodology</p>
           </div>
 
-          <div class="relative pl-8">
+          <div class="relative pl-8 timeline-step">
             <div class="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-surface-700 border-4 border-surface-950"></div>
             <span class="text-xs font-mono text-slate-400">June 2023 – February 2025</span>
             <h4 class="text-base font-bold text-white">Medical Officer (Surgery, Pediatrics, OB/GYN, Medicine)</h4>
             <p class="text-xs text-slate-400">Kitante Medical Center • Kampala, Uganda</p>
           </div>
 
-          <div class="relative pl-8">
+          <div class="relative pl-8 timeline-step">
             <div class="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-surface-700 border-4 border-surface-950"></div>
             <span class="text-xs font-mono text-slate-400">Conferral: September 2021</span>
             <h4 class="text-base font-bold text-white">Bachelor of Medicine & Bachelor of Surgery (MBChB)</h4>
@@ -464,8 +486,8 @@
         </div>
       </div>
 
-      <!-- Step Image Accent Card with 3D Tilt -->
-      <div class="lg:col-span-5 flex justify-center">
+      <!-- Step Image Accent Card with Scroll Parallax -->
+      <div class="lg:col-span-5 flex justify-center journey-image-parallax" data-speed="1.15">
         <div class="tilt-card w-full max-w-sm rounded-3xl bg-surface-900 border border-surface-700 p-3 shadow-2xl relative">
           <div class="w-full h-[460px] rounded-2xl overflow-hidden bg-surface-950">
             <img src="./grad-steps.jpg" alt="Dauphine Ayebale Academic Journey" class="w-full h-full object-cover grayscale contrast-125 hover:contrast-100 transition-all duration-700">
@@ -477,7 +499,7 @@
   </section>
 
   <!-- Connect Footer -->
-  <footer class="py-24 px-6 max-w-7xl mx-auto text-center">
+  <footer class="py-24 px-6 max-w-7xl mx-auto text-center scroll-reveal">
     <div class="inline-block p-1 rounded-full bg-surface-900 border border-surface-800 mb-6">
       <span class="px-5 py-2 text-xs font-mono text-accent-lime uppercase tracking-widest">Open for Global Opportunities</span>
     </div>
@@ -500,9 +522,99 @@
     </div>
   </footer>
 
-  <!-- Native Interactive Scripts -->
+  <!-- Script Engine: Lenis Smooth Scroll + GSAP ScrollTrigger Animations -->
   <script>
-    // Dynamic Cursor Spotlight Glow
+    // 1. Initialize Lenis (Lando Norris-Style Smooth Inertial Scroll)
+    const lenis = new Lenis({
+      duration: 1.25,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.5,
+    });
+
+    // Synchronize Lenis with GSAP ScrollTrigger
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+    gsap.ticker.lagSmoothing(0);
+
+    // 2. Parallax Scrolling Elements
+    gsap.to('.hero-image-parallax', {
+      y: 60,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
+    gsap.to('.journey-image-parallax', {
+      y: -50,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#journey',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
+    // 3. Staggered Entrance Animations on Scroll
+    gsap.utils.toArray('.scroll-reveal').forEach((el) => {
+      gsap.from(el, {
+        opacity: 0,
+        y: 40,
+        duration: 0.9,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+        }
+      });
+    });
+
+    gsap.from('.discipline-item', {
+      opacity: 0,
+      y: 50,
+      stagger: 0.18,
+      duration: 0.85,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '#disciplines',
+        start: 'top 75%',
+      }
+    });
+
+    gsap.from('.projects-grid .project-card', {
+      opacity: 0,
+      y: 45,
+      stagger: 0.15,
+      duration: 0.85,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '#projects',
+        start: 'top 75%',
+      }
+    });
+
+    gsap.from('.timeline-step', {
+      opacity: 0,
+      x: -30,
+      stagger: 0.15,
+      duration: 0.7,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '#journey',
+        start: 'top 75%',
+      }
+    });
+
+    // 4. Dynamic Cursor Spotlight Glow
     const glow = document.getElementById('cursor-glow');
     if (glow) {
       window.addEventListener('mousemove', (e) => {
@@ -511,7 +623,7 @@
       });
     }
 
-    // Native Zero-Dependency 3D Tilt with Specular Glare
+    // 5. 3D Tilt Engine with Specular Reflection
     document.querySelectorAll('.tilt-card').forEach((card) => {
       let shine = card.querySelector('.tilt-shine');
       if (!shine) {
@@ -552,7 +664,7 @@
       });
     });
 
-    // Category Filter
+    // 6. Category Filter
     function filterProjects(category) {
       const buttons = document.querySelectorAll('.filter-btn');
       buttons.forEach((btn) => {
@@ -573,6 +685,9 @@
           card.style.display = 'none';
         }
       });
+
+      // Refresh ScrollTrigger so positions recalculate after card collapse
+      ScrollTrigger.refresh();
     }
   </script>
 
