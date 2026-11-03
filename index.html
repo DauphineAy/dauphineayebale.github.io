@@ -1,663 +1,225 @@
+Got it! I have updated the HTML code below so that the **"View MVP Video"** button links directly to your file: `endelea-demo.mp4`.
+
+If you upload your `endelea-demo.mp4` file into the same folder as this `index.html` file on your GitHub repository, the button will open or play your video clip seamlessly.
+
+```html
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dauphine Ayebale, MBChB, MPH | Clinical Medicine • Global Health • Health Systems</title>
-  <meta name="description" content="Editorial portfolio of Dauphine Ayebale, MBChB, MPH. Frontline physician, quantitative epidemiologist, and health systems builder." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - MVP Available</title>
+    <!-- Google Fonts for typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- Fonts: Almave Editorial Serifs & Grotesk Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+        body, html {
+            width: 100%;
+            height: 100%;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow: hidden;
+            color: #ffffff;
+            background-color: #0b1f15;
+        }
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            serif: ['Playfair Display', 'serif'],
-            display: ['Cinzel', 'serif'],
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            mono: ['Space Mono', 'monospace'],
-          },
-          colors: {
-            sand: {
-              50: '#faf7f2',
-              100: '#f5f0e8',
-              200: '#ede4d6',
-              300: '#e1d3bf',
-            },
-            agave: {
-              950: '#0a1624',
-              900: '#112236',
-              800: '#1a324d',
-              700: '#26486d',
-            },
-            terracotta: {
-              500: '#d9643a',
-              600: '#c2532b',
-              700: '#a34220',
-            },
-            amber: {
-              400: '#e5ab6b',
-              500: '#d59451',
-            },
-            charcoal: {
-              900: '#181e24',
-              800: '#2b323a',
-              600: '#525c68',
+        /* Nature Animation Background */
+        .nature-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #0b1f15 0%, #133824 50%, #1b4d32 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Nature Particles / Fireflies */
+        .particle {
+            position: absolute;
+            background: rgba(168, 230, 207, 0.4);
+            border-radius: 50%;
+            animation: floatUp 10s infinite linear;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
             }
-          }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1);
+                opacity: 0;
+            }
         }
-      }
-    }
-  </script>
 
-  <!-- Lenis (Smooth Inertial Scrolling) -->
-  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+        /* Main Container Layout */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+            z-index: 1;
+            position: relative;
+        }
 
-  <style>
-    /* Lenis Essential Setup */
-    html.lenis, html.lenis body {
-      height: auto;
-    }
-    .lenis.lenis-smooth {
-      scroll-behavior: auto !important;
-    }
+        /* Graphic / Illustration Placeholder */
+        .hero-graphic {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            animation: floatIcon 4s ease-in-out infinite;
+        }
 
-    /* Organic warm paper grain pattern */
-    .bg-sand-texture {
-      background-color: #f7f3ed;
-      background-image: 
-        radial-gradient(at 100% 0%, rgba(217, 100, 58, 0.04) 0px, transparent 50%),
-        radial-gradient(at 0% 100%, rgba(17, 34, 54, 0.05) 0px, transparent 50%);
-    }
+        .hero-graphic svg {
+            width: 60px;
+            height: 60px;
+            fill: #a8e6cf;
+        }
 
-    /* Dynamic cursor spotlight glow (Warm Amber/Terracotta) */
-    #cursor-glow {
-      pointer-events: none;
-      position: fixed;
-      width: 480px;
-      height: 480px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(217, 100, 58, 0.07) 0%, rgba(229, 171, 107, 0.04) 40%, transparent 70%);
-      transform: translate(-50%, -50%);
-      z-index: 9999;
-      transition: opacity 0.3s ease;
-    }
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
 
-    /* 3D Tilt Context & Specular Highlight */
-    .tilt-card {
-      transform-style: preserve-3d;
-      perspective: 1000px;
-      will-change: transform;
-      position: relative;
-      overflow: hidden;
-      opacity: 1 !important;
-    }
+        /* Typography */
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #ffffff, #a8e6cf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    .tilt-shine {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      pointer-events: none;
-      background: radial-gradient(circle at 50% 50%, rgba(229, 171, 107, 0.25), transparent 60%);
-      opacity: 0;
-      transition: opacity 0.2s ease-out;
-      border-radius: inherit;
-      z-index: 20;
-    }
+        p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 300;
+            color: #d1e7dd;
+            max-width: 550px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
 
-    .video-glow {
-      box-shadow: 0 25px 60px -15px rgba(17, 34, 54, 0.25);
-    }
+        /* CTA Button for MVP Video */
+        .btn-mvp {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #a8e6cf;
+            color: #0b1f15;
+            padding: 16px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(168, 230, 207, 0.3);
+        }
 
-    /* Reliable Scroll Reveals */
-    .reveal-on-scroll {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-    }
+        .btn-mvp:hover {
+            background: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.4);
+        }
 
-    .reveal-on-scroll.is-visible {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-    }
-  </style>
+        .btn-mvp svg {
+            width: 20px;
+            height: 20px;
+            fill: #0b1f15;
+        }
+
+        /* Footer info */
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
 </head>
-<body class="bg-sand-texture text-charcoal-900 font-sans antialiased selection:bg-terracotta-500 selection:text-white overflow-x-hidden">
+<body>
 
-  <!-- Interactive Dynamic Warm Glow -->
-  <div id="cursor-glow" class="hidden md:block"></div>
+    <!-- Animated Nature Background -->
+    <div class="nature-bg" id="natureBg"></div>
 
-  <!-- Editorial Top Bar / Marquee Banner -->
-  <div class="bg-agave-950 text-amber-400 py-2 px-6 text-center text-[10px] font-mono tracking-widest uppercase border-b border-agave-800">
-    MBChB (U.S. M.D. Equivalent) • Emory MPH Quantitative Methods • Digital Health Interoperability
-  </div>
-
-  <!-- Header -->
-  <header class="sticky top-0 left-0 right-0 z-50 bg-sand-50/90 backdrop-blur-md border-b border-sand-200">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#hero" class="flex items-center gap-3 group">
-        <span class="w-3 h-3 rounded-full bg-terracotta-500 group-hover:scale-125 transition-transform duration-300"></span>
-        <div class="flex flex-col">
-          <span class="font-display font-bold text-lg tracking-wider text-agave-950 uppercase group-hover:text-terracotta-600 transition-colors">Dauphine Ayebale</span>
-          <span class="text-[10px] font-mono tracking-widest text-charcoal-600 uppercase">MBChB • MPH</span>
+    <div class="container">
+        <!-- Graphic (Leaf/Nature SVG Icon) -->
+        <div class="hero-graphic">
+            <svg viewBox="0 0 24 24">
+                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.5,17 5,17.5C5.83,15.83 8,11 17,8Z" />
+            </svg>
         </div>
-      </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-xs font-mono tracking-wider uppercase text-charcoal-600">
-        <a href="#disciplines" class="hover:text-agave-950 transition-colors">Three Pillars</a>
-        <a href="#showcase" class="hover:text-agave-950 transition-colors">MVP Video</a>
-        <a href="#projects" class="hover:text-agave-950 transition-colors">Selected Work</a>
-        <a href="#journey" class="hover:text-agave-950 transition-colors">Timeline</a>
-        <a href="mailto:uweradaphne@gmail.com" class="px-5 py-2.5 rounded-full border border-agave-950 text-agave-950 hover:bg-agave-950 hover:text-amber-400 font-semibold transition-all">
-          Connect
+        <!-- Main Copy -->
+        <h1>Coming Soon</h1>
+        <p>We are currently cultivating something extraordinary. While our full platform grows, you can take a look behind the scenes and explore our MVP progress.</p>
+
+        <!-- MVP Video Link -->
+        <a href="endelea-demo.mp4" target="_blank" class="btn-mvp">
+            <svg viewBox="0 0 24 24">
+                <path d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+            </svg>
+            View MVP Video
         </a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="hero" class="relative pt-24 pb-20 px-6 max-w-7xl mx-auto border-b border-sand-200">
-    <div class="grid lg:grid-cols-12 gap-12 items-center">
-      
-      <!-- Headline & Editorial Intro -->
-      <div class="lg:col-span-7">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono bg-sand-200/60 border border-sand-300 text-terracotta-600 mb-6 uppercase tracking-wider">
-          <span class="w-2 h-2 rounded-full bg-terracotta-500"></span>
-          Clinician • Biostatistician • Systems Builder
-        </div>
-
-        <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal tracking-tight text-agave-950 leading-[1.08] mb-6">
-          Frontline care,<br>
-          <span class="italic font-normal text-terracotta-600">biostatistical rigor</span> &<br>
-          scalable systems.
-        </h1>
-
-        <p class="text-base sm:text-lg text-charcoal-600 max-w-2xl leading-relaxed mb-8 font-light">
-          A physician (MBChB, U.S. M.D. Equivalent) and Emory quantitative epidemiologist (MPH). Bridging frontline diagnostic care with zero-licensing health software and statistical risk modeling across resource-constrained health systems.
-        </p>
-
-        <div class="flex flex-wrap items-center gap-4 text-xs font-mono uppercase tracking-wider">
-          <a href="#showcase" class="px-8 py-4 rounded-full bg-agave-950 text-amber-400 font-bold hover:bg-terracotta-600 hover:text-white transition-all shadow-md">
-            Watch MVP In Action ↓
-          </a>
-          <a href="mailto:uweradaphne@gmail.com" class="px-8 py-4 rounded-full bg-white hover:bg-sand-100 text-agave-950 border border-sand-300 transition-all shadow-sm">
-            uweradaphne@gmail.com
-          </a>
-        </div>
-      </div>
-
-      <!-- B&W Portrait in Almave Warm Clay Frame -->
-      <div class="lg:col-span-5 flex justify-center">
-        <div class="tilt-card w-full max-w-sm rounded-3xl bg-white border border-sand-300 p-3 shadow-xl relative">
-          <div class="w-full h-[450px] rounded-2xl overflow-hidden bg-agave-950 relative">
-            <img src="./portrait.jpg" alt="Dauphine Ayebale, MBChB, MPH" onerror="this.src='./clinical-or.jpg'" class="w-full h-full object-cover grayscale contrast-125 hover:contrast-105 transition-all duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-agave-950/90 via-transparent to-transparent"></div>
-            <div class="absolute bottom-5 left-5 right-5 z-10">
-              <p class="font-serif text-2xl text-white font-normal">Dauphine Ayebale</p>
-              <p class="text-xs font-mono text-amber-400 mt-1 uppercase tracking-wider">MBChB • Emory MPH Quantitative Methods '26</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
 
-    <!-- Live Telemetry Strip in Almave Navy & Sand -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-12 border-t border-sand-300 reveal-on-scroll">
-      <div class="p-6 rounded-2xl bg-white border border-sand-200 shadow-sm">
-        <div class="text-3xl font-serif text-terracotta-600 font-semibold">2,500+</div>
-        <div class="text-[11px] font-mono text-charcoal-600 mt-1 uppercase tracking-wider">Clinical Encounters Led</div>
-      </div>
-      <div class="p-6 rounded-2xl bg-white border border-sand-200 shadow-sm">
-        <div class="text-3xl font-serif text-agave-800 font-semibold">10,000+</div>
-        <div class="text-[11px] font-mono text-charcoal-600 mt-1 uppercase tracking-wider">Field Telemetry Users</div>
-      </div>
-      <div class="p-6 rounded-2xl bg-white border border-sand-200 shadow-sm">
-        <div class="text-3xl font-serif text-amber-500 font-semibold">3,278</div>
-        <div class="text-[11px] font-mono text-charcoal-600 mt-1 uppercase tracking-wider">NHANES Model Catchment</div>
-      </div>
-      <div class="p-6 rounded-2xl bg-white border border-sand-200 shadow-sm">
-        <div class="text-3xl font-serif text-agave-950 font-semibold">4,000,000+</div>
-        <div class="text-[11px] font-mono text-charcoal-600 mt-1 uppercase tracking-wider">Catchment EHR Scoped</div>
-      </div>
-    </div>
-  </section>
+    <footer>
+        &copy; 2026 All Rights Reserved.
+    </footer>
 
-  <!-- Feature Editorial Section: Interactive EndeleaCare Video Showcase -->
-  <section id="showcase" class="py-24 px-6 max-w-7xl mx-auto border-b border-sand-200 reveal-on-scroll">
-    <div class="max-w-3xl mb-12">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-terracotta-500/10 border border-terracotta-500/30 text-terracotta-600 uppercase tracking-wider mb-3">
-        Interactive Prototype
-      </div>
-      <h2 class="font-serif text-3xl sm:text-5xl font-normal text-agave-950 tracking-tight">
-        EndeleaCare: Closed-Loop Referral EHR
-      </h2>
-      <p class="text-charcoal-600 text-sm sm:text-base mt-3 leading-relaxed font-light">
-        Addressing the 100% unannounced emergency transfer crisis in resource-limited clinics. Built with offline-first tablet SQLite caching, ICD-11 standardized clinical fields, and asynchronous HL7/FHIR cloud handshakes.
-      </p>
-    </div>
+    <!-- Script to dynamically generate subtle floating particles/fireflies -->
+    <script>
+        const bg = document.getElementById('natureBg');
+        const particleCount = 25;
 
-    <!-- Editorial Video Display Card -->
-    <div class="rounded-3xl bg-white border border-sand-300 p-4 sm:p-6 video-glow overflow-hidden">
-      <div class="relative rounded-2xl overflow-hidden bg-agave-950 aspect-video flex items-center justify-center">
-        <video class="w-full h-full object-cover" autoplay loop muted playsinline controls>
-          <source src="./MVP Demo_Video.mp4" type="video/mp4">
-          <source src="./endelea-demo.mp4" type="video/mp4">
-          <p class="font-mono text-xs text-amber-400">Your browser does not support the video tag.</p>
-        </video>
-        <div class="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-agave-950/90 backdrop-blur-md border border-agave-800 text-xs font-mono text-amber-400">
-          ● Live Walkthrough • Zero-Licensing Architecture
-        </div>
-      </div>
-
-      <!-- Architectural Highlights Below Video -->
-      <div class="grid sm:grid-cols-3 gap-6 p-6 mt-4 border-t border-sand-200 text-left">
-        <div>
-          <div class="text-xs font-mono text-terracotta-600 uppercase tracking-wider">01 • Intake & Triage</div>
-          <p class="text-xs text-charcoal-600 mt-1 leading-relaxed">Direct capture of vitals, GCS, blood sugar, and ICD-11 diagnostic classifications with local caching.</p>
-        </div>
-        <div>
-          <div class="text-xs font-mono text-agave-800 uppercase tracking-wider">02 • Facility Dispatch</div>
-          <p class="text-xs text-charcoal-600 mt-1 leading-relaxed">One-click transfer to Regional Referral Hospitals, eliminating missing paper forms.</p>
-        </div>
-        <div>
-          <div class="text-xs font-mono text-amber-500 uppercase tracking-wider">03 • Receiving Loop Closure</div>
-          <p class="text-xs text-charcoal-600 mt-1 leading-relaxed">Confirmation timestamping by receiving teams, targeting >60% loop closure rate (baseline 0%).</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- The Three Disciplines -->
-  <section id="disciplines" class="py-24 px-6 max-w-7xl mx-auto border-b border-sand-200">
-    <div class="mb-14 reveal-on-scroll">
-      <h2 class="text-xs font-mono uppercase tracking-widest text-terracotta-600 mb-2">Multifaceted Foundation</h2>
-      <h3 class="font-serif text-3xl sm:text-5xl font-normal text-agave-950 tracking-tight">The Three Pillars</h3>
-    </div>
-
-    <div class="grid lg:grid-cols-3 gap-8">
-      
-      <!-- Discipline 1: Medicine -->
-      <div class="tilt-card rounded-3xl bg-white border border-sand-300 hover:border-terracotta-500/60 transition-all p-5 flex flex-col justify-between shadow-sm reveal-on-scroll">
-        <div>
-          <div class="h-60 rounded-2xl overflow-hidden mb-6 relative bg-agave-950">
-            <img src="./clinical-or.jpg" alt="Clinical Ward and Surgery" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-agave-950/80 to-transparent"></div>
-            <span class="absolute bottom-4 left-4 text-xs font-mono uppercase px-3 py-1 rounded-full bg-sand-50/90 text-agave-950 border border-sand-300 font-semibold z-10">Clinical Medicine</span>
-          </div>
-          <h4 class="font-serif text-2xl font-normal text-agave-950 mb-3">Frontline Clinical Care</h4>
-          <p class="text-sm text-charcoal-600 leading-relaxed mb-6 font-light">
-            Physician rotations across Internal Medicine, General Surgery, Pediatrics, and OB/GYN. Direct stewardship of over 2,500 patient encounters, standardizing acute digital intake tools to drop diagnostic delays by 25%.
-          </p>
-        </div>
-        <div class="p-4 rounded-2xl bg-sand-100 border border-sand-200 text-xs font-mono text-charcoal-600 space-y-1.5">
-          <div>• MBChB (U.S. M.D. Equivalent)</div>
-          <div>• 100% Alert Compliance in Epidemic Surveillance</div>
-          <div>• 12-Member Clinical Quality Team Lead</div>
-        </div>
-      </div>
-
-      <!-- Discipline 2: Public Health & Biostats -->
-      <div class="tilt-card rounded-3xl bg-white border border-sand-300 hover:border-agave-800/60 transition-all p-5 flex flex-col justify-between shadow-sm reveal-on-scroll">
-        <div>
-          <div class="h-60 rounded-2xl overflow-hidden mb-6 relative bg-agave-950">
-            <img src="./global-health.png" alt="Global Health Strategy" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-agave-950/80 to-transparent"></div>
-            <span class="absolute bottom-4 left-4 text-xs font-mono uppercase px-3 py-1 rounded-full bg-sand-50/90 text-agave-950 border border-sand-300 font-semibold z-10">Epidemiology & Biostats</span>
-          </div>
-          <h4 class="font-serif text-2xl font-normal text-agave-950 mb-3">Quantitative Public Health</h4>
-          <p class="text-sm text-charcoal-600 leading-relaxed mb-6 font-light">
-            Rollins School of Public Health (Emory University). Multivariable causal inference, survey-weighted logistic regressions on NHANES population data (n=3,278), and national vaccine delivery cold-chain routing strategies.
-          </p>
-        </div>
-        <div class="p-4 rounded-2xl bg-sand-100 border border-sand-200 text-xs font-mono text-charcoal-600 space-y-1.5">
-          <div>• SAS, R, SPSS, Epi Info, MAXQDA</div>
-          <div>• Survey Weighting & Stratified Sampling</div>
-          <div>• Uganda MOH National Malaria Telemetry</div>
-        </div>
-      </div>
-
-      <!-- Discipline 3: Systems & Technology -->
-      <div class="tilt-card rounded-3xl bg-white border border-sand-300 hover:border-amber-500/60 transition-all p-5 flex flex-col justify-between shadow-sm reveal-on-scroll">
-        <div>
-          <div class="h-60 rounded-2xl overflow-hidden mb-6 relative bg-agave-950">
-            <img src="./pathogen.png" alt="Health Data Science" class="w-full h-full object-cover contrast-125 grayscale hover:grayscale-0 transition-all duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-agave-950/80 to-transparent"></div>
-            <span class="absolute bottom-4 left-4 text-xs font-mono uppercase px-3 py-1 rounded-full bg-sand-50/90 text-agave-950 border border-sand-300 font-semibold z-10">Digital Health Systems</span>
-          </div>
-          <h4 class="font-serif text-2xl font-normal text-agave-950 mb-3">Scalable Health Architecture</h4>
-          <p class="text-sm text-charcoal-600 leading-relaxed mb-6 font-light">
-            Engineering zero-licensing health software, HL7/FHIR interoperability models, and scaling enterprise knowledge hubs across 10 global offices for over 10,000 active frontline personnel.
-          </p>
-        </div>
-        <div class="p-4 rounded-2xl bg-sand-100 border border-sand-200 text-xs font-mono text-charcoal-600 space-y-1.5">
-          <div>• HL7 / FHIR Standards & Relational Schemas</div>
-          <div>• Offline-First SQLite Android Architectures</div>
-          <div>• TaroWorks & Salesforce Pipeline Scaling</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Interactive Project Archive with Filter Tabs -->
-  <section id="projects" class="py-24 px-6 max-w-7xl mx-auto border-b border-sand-200">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal-on-scroll">
-      <div>
-        <h2 class="text-xs font-mono uppercase tracking-widest text-terracotta-600 mb-2">Portfolio Archive</h2>
-        <h3 class="font-serif text-3xl sm:text-5xl font-normal text-agave-950 tracking-tight">Selected Projects</h3>
-      </div>
-
-      <!-- Filters -->
-      <div class="flex flex-wrap gap-2 text-xs font-mono uppercase tracking-wider">
-        <button onclick="filterProjects('all')" class="filter-btn px-6 py-2.5 rounded-full border border-agave-950 bg-agave-950 text-amber-400 font-bold transition-all shadow-sm" data-filter="all">All</button>
-        <button onclick="filterProjects('clinical')" class="filter-btn px-6 py-2.5 rounded-full border border-sand-300 bg-white text-charcoal-600 hover:border-agave-950 transition-all shadow-sm" data-filter="clinical">Clinical</button>
-        <button onclick="filterProjects('public-health')" class="filter-btn px-6 py-2.5 rounded-full border border-sand-300 bg-white text-charcoal-600 hover:border-agave-950 transition-all shadow-sm" data-filter="public-health">Public Health</button>
-        <button onclick="filterProjects('systems')" class="filter-btn px-6 py-2.5 rounded-full border border-sand-300 bg-white text-charcoal-600 hover:border-agave-950 transition-all shadow-sm" data-filter="systems">Systems & Tech</button>
-      </div>
-    </div>
-
-    <!-- Editorial Cards Grid -->
-    <div class="grid md:grid-cols-2 gap-8">
-      
-      <!-- Card 1 -->
-      <div class="tilt-card project-card systems p-8 rounded-3xl bg-white border border-sand-300 hover:border-amber-500/60 transition-all flex flex-col justify-between shadow-sm reveal-on-scroll" data-category="systems">
-        <div>
-          <div class="flex items-center justify-between text-xs font-mono text-charcoal-600 mb-4">
-            <span class="text-terracotta-600 font-bold uppercase">Systems & Informatics</span>
-            <span>Emory Capstone • 2026</span>
-          </div>
-          <h4 class="font-serif text-2xl font-normal text-agave-950 mb-3">EndeleaCare: Low-Resource Closed-Loop Referral EHR</h4>
-          <p class="text-sm text-charcoal-600 leading-relaxed mb-6 font-light">
-            Scoped and validated an MVP for an open-source, HL7/FHIR-compliant referral EHR (4M+ catchment). Designed a 4-step intake-to-dispatch workflow on zero-licensing, offline-first Android tablets.
-          </p>
-          <div class="p-4 rounded-2xl bg-sand-100 border border-sand-200 mb-6">
-            <div class="text-xs font-mono uppercase text-terracotta-600 mb-1">Target Evaluation</div>
-            <div class="text-sm text-agave-950 font-medium">Targeting >80% record completion and >60% loop closure rate (n=87, α=0.05).</div>
-          </div>
-        </div>
-        <div class="flex flex-wrap gap-2 text-xs font-mono text-charcoal-600 z-10">
-          <span class="px-3 py-1 bg-sand-200/60 rounded-full">HL7 / FHIR</span>
-          <span class="px-3 py-1 bg-sand-200/60 rounded-full">Offline Caching</span>
-          <span class="px-3 py-1 bg-sand-200/60 rounded-full">Android Tablet</span>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="tilt-card project-card clinical p-8 rounded-3xl bg-white border border-sand-300 hover:border-terracotta-500/60 transition-all flex flex-col justify-between shadow-sm reveal-on-scroll" data-category="clinical">
-        <div>
-          <div class="flex items-center justify-between text-xs font-mono text-charcoal-600 mb-4">
-            <span class="text-agave-800 font-bold uppercase">Clinical Medicine</span>
-            <span>Kitante Medical Center • 2023 – 2025</span>
-          </div>
-          <h4 class="font-serif text-2xl font-normal text-agave-950 mb-3">Digital Intake & Epidemic Alert Pipeline</h4>
-          <p class="text-sm text-charcoal-600 leading-relaxed mb-6 font-light">
-            Standardized digital case intake tools across 3 clinical wards. Parsed 3,500+ records with 100% compliance on statutory disease reporting and led QI teams to lower diagnostic errors.
-          </p>
-          <div class="p-4 rounded-2xl bg-sand-100 border border-sand-200 mb-6">
-            <div class="text-xs font-mono uppercase text-agave-800 mb-1">Impact Delivered</div>
-            <div class="text-sm text-agave-950 font-medium">Reduced intake-to-diagnosis turnaround by ~25% across 2,500+ high-risk patient encounters.</div>
-          </div>
-        </div>
-        <div class="flex flex-wrap gap-2 text-xs font-mono text-charcoal-600 z-10">
-          <span class="px-3 py-1 bg-sand-200/60 rounded-full">Clinical QI</span>
-          <span class="px-3 py-1 bg-sand-200/60 rounded-full">EMR Integration</span>
-          <span class="px-3 py-1 bg-sand-200/60 rounded-full">Disease Surveillance</span>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="tilt-card project-card public-health p-8 rounded-3xl bg-white border border-sand-300 hover:border-amber-500/60 transition-all flex flex-col justify-between shadow-sm reveal-on-scroll" data-category="public-health">
-        <div>
-          <div class="flex items-center justify-between text-xs font-mono text-charcoal-600 mb-4">
-            <span class="text-amber-600 font-bold uppercase">Quantitative Public Health</span>
-            <span>Emory University • 2025</span>
-          </div>
-          <h4 class="font-serif text-2xl font-normal text-agave-950 mb-3">Population Risk Modeling (NHANES)</h4>
-          <p class="text-sm text-charcoal-600 leading-relaxed mb-6 font-light">
-            Engineered 3 nested, survey-weighted multivariable logistic regression models in SAS on NHANES data (n=3,278), isolating undiagnosed hypertension risk factors to inform clinical screening thresholds.
-          </p>
-          <div class="p-4 rounded-2xl bg-sand-100 border border-sand-200 mb-6">
-            <div class="text-xs font-mono uppercase text-amber-600 mb-1">Statistical Finding</div>
-            <div class="text-sm text-agave-950 font-medium">Identified male OR: 1.67 (95% CI), adjusted for age, BMI, and poverty ratio.</div>
-          </div>
-        </div>
-        <div class="flex flex-wrap gap-2 text-xs font-mono text-charcoal-600 z-10">
-          <span class="px-3 py-1 bg-sand-200/60 rounded-full">SAS Multivariable</span>
-          <span class="px-3 py-1 bg-sand-200/60 rounded-full">Survey Weighting</span>
-          <span class="px-3 py-1 bg-sand-200/60 rounded-full">Biostatistics</span>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="tilt-card project-card systems public-health p-8 rounded-3xl bg-white border border-sand-300 hover:border-agave-950 transition-all flex flex-col justify-between shadow-sm reveal-on-scroll" data-category="systems">
-        <div>
-          <div class="flex items-center justify-between text-xs font-mono text-charcoal-600 mb-4">
-            <span class="text-terracotta-600 font-bold uppercase">Global Systems & MEL</span>
-            <span>Living Water International • 2025 – Present</span>
-          </div>
-          <h4 class="font-serif text-2xl font-normal text-agave-950 mb-3">Global Knowledge Architecture & Telemetry</h4>
-          <p class="text-sm text-charcoal-600 leading-relaxed mb-6 font-light">
-            Architected the centralized "Flourish" knowledge hub across 10 global field offices. Scaled mobile TaroWorks/Salesforce data collection workflows to 10,000+ frontline users.
-          </p>
-          <div class="p-4 rounded-2xl bg-sand-100 border border-sand-200 mb-6">
-            <div class="text-xs font-mono uppercase text-terracotta-600 mb-1">Impact Delivered</div>
-            <div class="text-sm text-agave-950 font-medium">Cut info-retrieval time by ~35% for 500+ personnel; directed $50K+ in prioritized resources.</div>
-          </div>
-        </div>
-        <div class="flex flex-wrap gap-2 text-xs font-mono text-charcoal-600 z-10">
-          <span class="px-3 py-1 bg-sand-200/60 rounded-full">Salesforce</span>
-          <span class="px-3 py-1 bg-sand-200/60 rounded-full">SharePoint Architecture</span>
-          <span class="px-3 py-1 bg-sand-200/60 rounded-full">WCAG 2.1</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Editorial Timeline Section with grad-steps Photo -->
-  <section id="journey" class="py-24 px-6 max-w-7xl mx-auto border-b border-sand-200">
-    <div class="grid lg:grid-cols-12 gap-12 items-center">
-      
-      <!-- Narrative & Credentials -->
-      <div class="lg:col-span-7 reveal-on-scroll">
-        <h2 class="text-xs font-mono uppercase tracking-widest text-terracotta-600 mb-2">Track Record</h2>
-        <h3 class="font-serif text-3xl sm:text-5xl font-normal text-agave-950 tracking-tight mb-8">
-          The Journey Across Medicine & Systems
-        </h3>
-
-        <div class="space-y-8 relative before:absolute before:inset-0 before:left-3 before:w-0.5 before:bg-sand-300">
-          
-          <div class="relative pl-8">
-            <div class="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-terracotta-500 border-4 border-sand-50"></div>
-            <span class="text-xs font-mono text-terracotta-600 font-bold">July 2026 – Present</span>
-            <h4 class="font-serif text-xl text-agave-950 mt-1">Programs Impact Officer – MEL</h4>
-            <p class="text-xs text-charcoal-600">Living Water International • Stafford, TX (Remote)</p>
-          </div>
-
-          <div class="relative pl-8">
-            <div class="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-agave-800 border-4 border-sand-50"></div>
-            <span class="text-xs font-mono text-agave-800 font-bold">Conferral: May 2026</span>
-            <h4 class="font-serif text-xl text-agave-950 mt-1">Master of Public Health (MPH)</h4>
-            <p class="text-xs text-charcoal-600">Emory University, Rollins School of Public Health</p>
-            <p class="text-xs text-charcoal-600 mt-0.5 font-light">Global Health — Quantitative Methods & Biostatistical Methodology</p>
-          </div>
-
-          <div class="relative pl-8">
-            <div class="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-amber-500 border-4 border-sand-50"></div>
-            <span class="text-xs font-mono text-amber-600 font-bold">June 2023 – February 2025</span>
-            <h4 class="font-serif text-xl text-agave-950 mt-1">Medical Officer (Surgery, Pediatrics, OB/GYN, Medicine)</h4>
-            <p class="text-xs text-charcoal-600">Kitante Medical Center • Kampala, Uganda</p>
-          </div>
-
-          <div class="relative pl-8">
-            <div class="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-sand-300 border-4 border-sand-50"></div>
-            <span class="text-xs font-mono text-charcoal-600 font-bold">Conferral: September 2021</span>
-            <h4 class="font-serif text-xl text-agave-950 mt-1">Bachelor of Medicine & Bachelor of Surgery (MBChB)</h4>
-            <p class="text-xs text-charcoal-600">Kampala International University • U.S. M.D. Equivalent</p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Step Image Accent Card in Almave Warm Clay Frame -->
-      <div class="lg:col-span-5 flex justify-center reveal-on-scroll">
-        <div class="tilt-card w-full max-w-sm rounded-3xl bg-white border border-sand-300 p-3 shadow-xl relative">
-          <div class="w-full h-[460px] rounded-2xl overflow-hidden bg-agave-950">
-            <img src="./grad-steps.jpg" alt="Dauphine Ayebale Academic Journey" class="w-full h-full object-cover grayscale contrast-125 hover:contrast-105 transition-all duration-700">
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Connect Footer in Almave Deep Agave Navy -->
-  <footer class="py-24 px-6 bg-agave-950 text-white text-center reveal-on-scroll">
-    <div class="max-w-7xl mx-auto">
-      <div class="inline-block p-1 rounded-full bg-agave-900 border border-agave-800 mb-6">
-        <span class="px-5 py-2 text-xs font-mono text-amber-400 uppercase tracking-widest">Open for Global Opportunities</span>
-      </div>
-      <h3 class="font-serif text-4xl sm:text-6xl font-normal tracking-tight text-white mb-4">
-        Let's Connect.
-      </h3>
-      <p class="text-sand-300 text-sm max-w-lg mx-auto mb-10 leading-relaxed font-light">
-        Whether you're exploring clinical leadership, biostatistical modeling, or digital health systems architecture.
-      </p>
-      <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-mono uppercase tracking-wider">
-        <a href="mailto:uweradaphne@gmail.com" class="px-8 py-4 rounded-full bg-amber-400 text-agave-950 font-bold hover:bg-terracotta-500 hover:text-white transition-all shadow-md">
-          uweradaphne@gmail.com
-        </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-full bg-agave-900 border border-agave-800 text-white hover:bg-agave-800 transition-all">
-          LinkedIn Profile →
-        </a>
-      </div>
-      <div class="mt-20 text-xs font-mono text-sand-300/60">
-        © 2026 Dauphine Ayebale, MBChB, MPH • Hosted on GitHub Pages
-      </div>
-    </div>
-  </footer>
-
-  <!-- Script Engine: Lenis + Intersection Observer + 3D Tilt -->
-  <script>
-    // 1. Initialize Lenis Smooth Scroll
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 0.9,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    // 2. Reliable Reveal on Scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
+        for (let i = 0; i < particleCount; i++) {
+            let particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            // Random sizing and positioning
+            let size = Math.random() * 6 + 2;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${Math.random() * 100}vw`;
+            
+            // Random animation speed and delay
+            let duration = Math.random() * 8 + 6;
+            let delay = Math.random() * 5;
+            particle.style.animationDuration = `${duration}s`;
+            particle.style.animationDelay = `${delay}s`;
+            
+            bg.appendChild(particle);
         }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
-
-    // Fallback: If an element is already in view, show immediately
-    setTimeout(() => {
-      document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight) {
-          el.classList.add('is-visible');
-        }
-      });
-    }, 150);
-
-    // 3. Dynamic Cursor Spotlight Glow
-    const glow = document.getElementById('cursor-glow');
-    if (glow) {
-      window.addEventListener('mousemove', (e) => {
-        glow.style.left = e.clientX + 'px';
-        glow.style.top = e.clientY + 'px';
-      });
-    }
-
-    // 4. 3D Tilt Engine with Specular Reflection
-    document.querySelectorAll('.tilt-card').forEach((card) => {
-      let shine = card.querySelector('.tilt-shine');
-      if (!shine) {
-        shine = document.createElement('div');
-        shine.className = 'tilt-shine';
-        card.appendChild(shine);
-      }
-
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = ((y - centerY) / centerY) * -8;
-        const rotateY = ((x - centerX) / centerX) * 8;
-
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.015, 1.015, 1.015)`;
-        card.style.boxShadow = `${-rotateY * 1.5}px ${rotateX * 1.5}px 30px rgba(17, 34, 54, 0.12)`;
-
-        const percentX = (x / rect.width) * 100;
-        const percentY = (y / rect.height) * 100;
-        shine.style.background = `radial-gradient(circle at ${percentX}% ${percentY}%, rgba(229, 171, 107, 0.25), transparent 60%)`;
-        shine.style.opacity = '1';
-      });
-
-      card.addEventListener('mouseleave', () => {
-        card.style.transition = 'transform 0.4s ease-out, box-shadow 0.4s ease-out';
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-        card.style.boxShadow = 'none';
-        shine.style.opacity = '0';
-        
-        setTimeout(() => {
-          card.style.transition = 'none';
-        }, 400);
-      });
-    });
-
-    // 5. Category Filter Function
-    function filterProjects(category) {
-      const buttons = document.querySelectorAll('.filter-btn');
-      buttons.forEach((btn) => {
-        if (btn.getAttribute('data-filter') === category) {
-          btn.classList.remove('bg-white', 'text-charcoal-600', 'border-sand-300');
-          btn.classList.add('bg-agave-950', 'text-amber-400', 'border-agave-950', 'font-bold');
-        } else {
-          btn.classList.remove('bg-agave-950', 'text-amber-400', 'border-agave-950', 'font-bold');
-          btn.classList.add('bg-white', 'text-charcoal-600', 'border-sand-300');
-        }
-      });
-
-      const cards = document.querySelectorAll('.project-card');
-      cards.forEach((card) => {
-        if (category === 'all' || card.classList.contains(category)) {
-          card.style.display = 'flex';
-          card.classList.add('is-visible');
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-  </script>
-
+    </script>
 </body>
 </html>
+
+```
